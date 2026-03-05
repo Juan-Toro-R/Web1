@@ -1,0 +1,139 @@
+/* Estilo general */
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f4f6f9;
+color:#333;
+}
+
+/* Encabezado */
+header{
+background:#1f2937;
+color:white;
+text-align:center;
+padding:30px 20px;
+}
+
+header h1{
+margin:0;
+font-size:34px;
+}
+
+header h2{
+margin:5px 0;
+font-weight:normal;
+color:#d1d5db;
+}
+
+header h3{
+margin:5px 0;
+font-weight:normal;
+color:#9ca3af;
+}
+
+/* Menú */
+nav ul{
+list-style:none;
+padding:0;
+margin-top:15px;
+}
+
+nav ul li{
+display:inline-block;
+margin:0 12px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+nav ul li a:hover{
+color:#60a5fa;
+}
+
+/* Contenido principal */
+main{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+/* Secciones */
+section{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:6px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+h2{
+color:#1f2937;
+border-bottom:2px solid #e5e7eb;
+padding-bottom:5px;
+}
+
+/* Contenedor de artículos */
+.contenedor{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+article{
+flex:1;
+background:#f9fafb;
+padding:15px;
+border-radius:5px;
+}
+
+/* Texto destacado */
+.destacado{
+background:#fff8c5;
+padding:6px;
+border-radius:4px;
+}
+
+/* Formulario */
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+input{
+padding:10px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+/* Sidebar */
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+padding:5px 0;
+}
+
+/* Links */
+a{
+color:#2563eb;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+/* Footer */
+footer{
+background:#1f2937;
+color:white;
+text-align:center;
+padding:15px;
+font-size:14px;
+}
