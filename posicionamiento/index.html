@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tipos de Posición en CSS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Ejemplos de Posicionamiento CSS</h1>
+
+<!-- POSITION STATIC -->
+<section class="bloque">
+  <h2>Position Static</h2>
+  <p>Es la posición normal de los elementos. Se colocan uno debajo del otro.</p>
+  <div class="area">
+    <div class="box">Elemento A</div>
+    <div class="box">Elemento B</div>
+  </div>
+</section>
+
+<!-- POSITION RELATIVE -->
+<section class="bloque">
+  <h2>Position Relative</h2>
+  <p>Permite mover el elemento desde su lugar original sin perder su espacio.</p>
+  <div class="area">
+    <div class="box">Elemento A</div>
+    <div class="box relativo">movido</div>
+  </div>
+</section>
+
+<!-- POSITION ABSOLUTE -->
+<section class="bloque">
+  <h2>Position Absolute</h2>
+  <p>Se posiciona con respecto a su contenedor padre.</p>
+  <div class="area contenedor-padre">
+    <div class="box">Elemento A</div>
+    <div class="box absoluto">ubicado</div>
+  </div>
+</section>
+
+<!-- POSITION FIXED -->
+<section class="bloque">
+  <h2>Position Fixed</h2>
+  <p>El elemento permanece fijo en la pantalla aunque se haga scroll.</p>
+</section>
+
+<!-- POSITION STICKY -->
+<section class="bloque">
+  <h2>Position Sticky</h2>
+  <p>Funciona como relative hasta que llega al límite y se queda fijo.</p>
+  <div class="zona-scroll">
+    <div class="box pegajoso">Sticky Box</div>
+    <div class="espacio">Más contenido para hacer scroll...</div>
+  </div>
+</section>
+
+<!-- EJEMPLO FIJO -->
+<div class="boton-fijo">Botón fijo</div>
+
+</body>
+</html>
