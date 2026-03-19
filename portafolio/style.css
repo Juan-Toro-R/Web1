@@ -1,0 +1,531 @@
+/* ============================================================
+       VARIABLES Y RESET
+       ============================================================ */
+
+    :root {
+      --bg:       #0d0d0d;
+      --surface:  #161616;
+      --border:   #2a2a2a;
+      --accent:   #ecd823;
+      --text:     #e8e8e8;
+      --text-dim: #888;
+      --radius:   12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* ============================================================
+       NAVBAR
+       Flex en fila: logo a la izquierda, links a la derecha
+       ============================================================ */
+
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 1.4rem 6%;
+      background-color: rgba(13, 13, 13, 0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+
+    /* ============================================================
+       HERO
+       Flex en columna: todo apilado y centrado
+       ============================================================ */
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 90vh;
+      padding: 4rem 6%;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .hero-tag {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 0.35rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.1;
+      max-width: 14ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      color: var(--text-dim);
+      max-width: 46ch;
+      font-size: 1rem;
+    }
+
+    /* Flex en fila: dos botones uno al lado del otro */
+    .hero-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    /* Flex en fila: tres métricas separadas */
+    .hero-stats {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      width: 100%;
+      max-width: 480px;
+      justify-content: center;
+    }
+
+    /* Cada stat: flex en columna */
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+
+    /* ============================================================
+       BOTONES
+       ============================================================ */
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.8;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.8rem 2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+    }
+
+
+    /* ============================================================
+       SOBRE MÍ
+       Flex en fila: imagen a la izquierda, texto a la derecha
+       ============================================================ */
+
+    .about {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+
+      padding: 6rem 10%;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-image {
+      flex-shrink: 0;
+      width: 240px;
+      height: 280px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      max-width: 50ch;
+      margin-bottom: 1rem;
+    }
+
+    /* Flex en fila con wrap: chips que fluyen en varias líneas */
+    .skills {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .chip {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 0.3rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.82rem;
+    }
+
+
+    /* ============================================================
+       PROYECTOS — GRID DE TARJETAS
+       Flex con wrap: tarjetas que se acomodan en filas automáticamente
+       ============================================================ */
+
+    .projects {
+      padding: 6rem 8%;
+      border-top: 1px solid var(--border);
+    }
+
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Contenedor: flex wrap simula un grid de 3 columnas */
+    .cards-grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    /* Cada tarjeta ocupa 1/3 del ancho disponible */
+    .card {
+      flex: 1 1 calc(33.333% - 1.5rem);
+      min-width: 240px;
+
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #3a3a3a;
+    }
+
+    .card-thumb-ig {
+      height: 160px;
+      background-image: url("https://cdn.dribbble.com/userupload/42045831/file/original-ee5df17efa4dfdd41b29f7aa39f27e1f.jpg");
+      background-size: cover;
+      /* background-color: var(--bg); */
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .card-thumb-v {
+      height: 160px;
+      background-image: url("https://marketersbyadlatina.com/uploads/img/-9509-ML-seccion.jpg");
+      background-size: cover;
+      /* background-color: var(--bg); */
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .card-thumb-youtube {
+      height: 160px;
+      background-image: url("https://m.media-amazon.com/images/I/814tB5cCBhL.jpg");
+      background-size: cover;
+      /* background-color: var(--bg); */
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .card-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.5rem;
+    }
+
+    /* Tags: flex en fila */
+    .card-tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      background-color: rgba(200, 240, 77, 0.1);
+      color: var(--accent);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card-body h3 {
+      font-size: 1.1rem;
+    }
+
+    .card-body p {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      flex: 1;
+    }
+
+    /* Footer de tarjeta: flex en fila, separado */
+    .card-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .year {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    .card-link {
+      color: var(--accent);
+      font-size: 0.82rem;
+      transition: letter-spacing 0.2s;
+    }
+
+    .card-link:hover {
+      letter-spacing: 0.04em;
+    }
+
+
+    /* ============================================================
+       CONTACTO
+       Flex en fila: texto a la izquierda, formulario a la derecha
+       ============================================================ */
+
+    .contact {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 4rem;
+
+      padding: 6rem 10%;
+      border-top: 1px solid var(--border);
+      background-color: var(--surface);
+    }
+
+    .contact-text h2 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-text p {
+      color: var(--text-dim);
+      max-width: 36ch;
+    }
+
+    /* Info de contacto: flex en columna */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .contact-info p {
+      color: var(--text-dim);
+      font-size: 1rem;
+    }
+
+
+    /* ============================================================
+       FOOTER
+       Flex en fila: copyright a la izquierda, redes a la derecha
+       ============================================================ */
+
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 2rem 6%;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer p {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* Links sociales: flex en fila */
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+
+    /* ============================================================
+       ETIQUETA DE SECCIÓN (reutilizable)
+       ============================================================ */
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .about {
+        flex-direction: column;
+        padding: 4rem 6%;
+      }
+      .about-image {
+        width: 100%;
+        height: 200px;
+      }
+
+      .card { flex: 1 1 100%; }
+
+      .contact {
+        flex-direction: column;
+        padding: 4rem 6%;
+      }
+      .contact-form { max-width: 100%; }
+      .form-row { flex-direction: column; }
+
+      .footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
