@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de Control - Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-5">
+                <div class="admin-card p-4">
+                    <h5 class="fw-bold mb-4 text-center">GESTIÓN DE PRODUCTO</h5>
+                    
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">NOMBRE</label>
+                        <input type="text" id="nombre" class="form-control dark-input" placeholder="Ej: Monitor Gamer">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">PRECIO</label>
+                        <input type="number" id="precio" class="form-control dark-input" placeholder="0.00">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">URL IMAGEN</label>
+                        <input type="text" id="imagen" class="form-control dark-input" placeholder="https://...">
+                    </div>
+
+                    <button id="btnCrear" class="btn btn-danger w-100 fw-bold mt-2">REGISTRAR</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-secondary opacity-25 mb-5">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorProductos">
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

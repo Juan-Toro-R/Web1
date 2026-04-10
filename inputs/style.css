@@ -1,0 +1,68 @@
+/* Estética Stealth & Minimalista */
+
+body {
+    background-color: #0b0b0b; /* Negro mate */
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Tarjeta del Formulario */
+.admin-card {
+    background-color: #121212;
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Inputs Oscuros */
+.dark-input {
+    background-color: #000 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+    font-size: 0.9rem;
+}
+
+.dark-input:focus {
+    border-color: #dc3545 !important; /* Rojo de Bootstrap */
+    box-shadow: none !important;
+}
+
+/* Botón Rojo Sólido */
+.btn-danger {
+    background-color: #e60000;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #b30000;
+    transform: translateY(-1px);
+}
+
+/* Tarjetas de Producto Generadas */
+.product-card {
+    background-color: #121212;
+    border: 1px solid #222;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #222;
+    filter: grayscale(20%);
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+}
